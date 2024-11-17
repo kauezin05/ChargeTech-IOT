@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+   {
+      "type": "wokwi-potentiometer",
+      "id": "sensor1",
+      "top": -106.9,
+      "left": -173,
+      "attrs": { "value": "1k" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "sensor2",
+      "top": 104.3,
+      "left": -201.8,
+      "attrs": { "value": "1k" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "sensor3",
+      "top": 17.9,
+      "left": -201.8,
+      "attrs": { "value": "1k" }
+    }
+
+  ],
+  "connections": [
+    [ "esp:GND.2", "sensor1:GND", "black", [ "v-9.6", "h153.6" ] ],
+    [ "esp:GND.2", "sensor3:GND", "black", [ "h57.6", "v96" ] ],
+    [ "esp:GND.2", "sensor2:GND", "black", [ "h38.4", "v105.6", "h115.2" ] ],
+    [ "esp:3V3", "sensor1:VCC", "red", [ "h0" ] ],
+    [ "esp:3V3", "sensor3:VCC", "red", [ "v9.6", "h260.15" ] ],
+    [ "esp:3V3", "sensor2:VCC", "red", [ "v19.2", "h260.15" ] ],
+    [ "esp:VP", "sensor1:SIG", "blue", [ "h-19.05", "v-38.4", "h268.8" ] ],
+    [ "esp:VN", "sensor3:SIG", "blue", [ "h0" ] ],
+    [ "esp:34", "sensor2:SIG", "blue", [ "h-19.05", "v172.8", "h268.8" ] ]
+  ],
+
+  "dependencies": {}
+}
