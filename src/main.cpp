@@ -6,12 +6,11 @@
 
 #define ADC_CHANNEL ADC1_CHANNEL_0  // Canal 0 do ADC1
 #define ADC_WIDTH   ADC_WIDTH_BIT_12 // Resolução de 12 bits
-#define ADC_ATTEN   ADC_ATTEN_DB_11 // Atenuação do ADC (0-3.3V)
+#define ADC_ATTEN   ADC_ATTEN_DB_12 // Atenuação do ADC (0-3.3V)
 #define MEASUREMENT_INTERVAL_MS 1000 // Intervalo entre medições (ms)
 
-// Valores de calibração
-#define VOLTAGE_DIVIDER_RATIO 10.0   // Divisor de tensão
-#define CURRENT_SENSOR_FACTOR 0.066  // Sensor de corrente (66mV/A)
+#define VOLTAGE_DIVIDER_RATIO 10.0
+#define CURRENT_SENSOR_FACTOR 0.066
 
 void init_adc() {
     adc1_config_width(ADC_WIDTH);
@@ -34,7 +33,7 @@ float read_current() {
 }
 
 void setup() {
-    Serial.begin(115200); // Inicializa o terminal serial
+    Serial.begin(115200);
     init_adc();
     Serial.println("Sistema de Monitoramento de Energia Inicializado");
 }
@@ -46,12 +45,10 @@ void loop() {
     float current = read_current();
     float power = voltage * current;
 
-    // Calcular energia consumida
     total_energy_wh += power * (MEASUREMENT_INTERVAL_MS / 3600000.0);
 
-    // Exibir dados no terminal
-    Serial.printf("Tensão: %.2f V, Corrente: %.2f A, Potência: %.2f W, Energia acumulada: %.2f Wh\n",
-                  voltage, current, power, total_energy_wh);
+    // Envia os dados formatados como CSV
+    Serial.printf("%.2f,%.2f,%.2f,%.2f\n", voltage, current, power, total_energy_wh);
 
-    delay(MEASUREMENT_INTERVAL_MS); // Intervalo entre medições
+    delay(MEASUREMENT_INTERVAL_MS);
 }
