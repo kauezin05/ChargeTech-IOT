@@ -47,7 +47,7 @@ void loop() {
 
     total_energy_wh += power * (MEASUREMENT_INTERVAL_MS / 3600000.0);
 
-    // Envia os dados formatados como CSV
+ 
     Serial.printf("%.2f,%.2f,%.2f,%.2f\n", voltage, current, power, total_energy_wh);
 
     delay(MEASUREMENT_INTERVAL_MS);
