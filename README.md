@@ -1,3 +1,19 @@
+# Projeto BeautyTech
+
+## Integrantes
+
+- **CARLOS EDUARDO MENDONÇA DA SILVA** - RM552164 - 2TDSPV
+- **CARLOS ALBERTO MACHARELLI JUNIOR** – RM551677 - 2TDSPV
+- **EDUARDO TOSHIO ROCHA OKUBO** – RM551763 - 2TDSPV
+- **KAUÊ ALEXANDRE DE OLIVEIRA** – RM551812 - 2TDSPV
+- **VITOR MACHADO MIRANDA** – RM551451 - 2TDSPV
+
+# LINK DO VIDEO TESTANDO PROJETO: 
+- https://www.youtube.com/watch?si=TzAs7UJtrAV5EElt&v=oCslx__mu3M&feature=youtu.be
+
+# LINK DA API:
+- https://replit.com/@duducabr11/APIIANodejs
+
 # Sistema de Monitoramento de Consumo Energético
 
 ## Descrição do Projeto
